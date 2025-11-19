@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f5edcd;
+  --color-gold-200: #ebdba0;
+  --color-gold-300: #e0c46c;
+  --color-gold-400: #d6ad40;
+  --color-gold-500: #c69628;
+  --color-gold-600: #a8761e;
+  --color-gold-700: #87591a;
+  --color-gold-800: #70481b;
+  --color-gold-900: #5d3d1b;
+  --color-gold-950: #35200d;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gold-600 hover:bg-gold-700 transition-colors duration-300 cursor-pointer;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-gold-600 text-base font-medium rounded-md text-gold-600 hover:bg-gold-50 transition-colors duration-300 cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
